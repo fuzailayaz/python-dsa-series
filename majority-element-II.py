@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 class Solution:
     def majorityElement(self,nums:list[int]) -> list[int]:
         count = defaultdict(int)
