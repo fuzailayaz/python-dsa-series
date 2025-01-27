@@ -13,7 +13,7 @@ class BinarySearch:
 
         while left <= right:
             # First Calculate mid # In order to avoid overflow condition
-            mid = right - (right - left) // 2 
+            mid = left + (right - left) // 2 
             if arr[mid] == target:
                 return mid
             if arr[mid] < target:
@@ -22,5 +22,5 @@ class BinarySearch:
                 right = mid - 1 # Target is in left - half
         return -1
 sol = BinarySearch()
-arr, target = [2,4,6,8,10,12,14], 10
+arr, target = [2,4,6,8,10,12,14], 4
 print(sol.search(arr,target))
