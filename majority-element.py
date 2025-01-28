@@ -15,13 +15,17 @@ print(sol.majorityElement(nums)) '''
 
 class Solution:
     def majorityElement(self,nums:list[int]) -> int:
-        res, count = 0,0
+        ans, count = -1,0
 
         for n in nums:
             if count == 0:
-                res = n
-            count += (1 if n == res else -1)
-        return res
+                ans = n
+            count += (1 if n == ans else -1)
+        if nums.count(ans) > len(nums) // 2:
+            return ans
+        return -1
+    
 sol = Solution()
 nums = [2,2,1,1,1,2,2]
-print(sol.majorityElement(nums))
+nums1 = [61,13]
+print(sol.majorityElement(nums1))
